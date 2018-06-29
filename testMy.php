@@ -1,14 +1,12 @@
 <?php
 $start = microtime(true);
 $CPU = getrusage();
-
-$data = getrusage();
     echo "User time: ".
-        ($data['ru_utime.tv_sec'] +
-        $data['ru_utime.tv_usec'] / 1000000) . "\n";
+        ($CPU['ru_utime.tv_sec'] +
+        $CPU['ru_utime.tv_usec'] / 1000000) . "\n";
     echo "System time: ".
-        ($data['ru_stime.tv_sec'] +
-        $data['ru_stime.tv_usec'] / 1000000) . "\n";
+        ($CPU['ru_stime.tv_sec'] +
+        $CPU['ru_stime.tv_usec'] / 1000000) . "\n";
 
 echo 'Время выполнения скрипта: '.(microtime(true) - $start).' сек.' . "\n";
 
